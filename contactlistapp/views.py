@@ -20,3 +20,9 @@ def addContact(request):
         return redirect('/')
 
     return render(request, 'new.html')
+
+
+def contactProfile(request, pk):
+    contact = Contact.objects.get(id=pk)
+    return render(request, 'contact-profile.html', {'contact': contact})
+
